@@ -1,0 +1,86 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-image: url('../../img/Mask\ Group@2x.jpg');
+    background-position: top right;
+    background-size: 40%;
+    background-repeat: no-repeat;
+    background-color: #515DEF;
+    font-family: "Poppins", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+}
+
+.container{
+    max-width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 20px;
+    padding-right: 20px;    
+    color: white;
+}
+
+.hero{
+    padding-top: 20px;
+    padding-bottom: 20px;
+    display: flex;
+    gap: 150px;
+    align-items: center;
+    figcaption{
+        display: none;
+    }
+    .hero_nav{
+        width: 100%;
+        .menu{
+            display: flex;
+            margin: 0;
+            padding: 0;
+            list-style-type: none;
+            gap: 50px;      
+            li:last-child{
+                margin-left: auto;
+                display: inline-block;
+                background-color: #515DEF;
+                padding: 15px 25px;
+            }  
+            a{
+                color: white;
+                text-decoration: none;
+            }
+        }
+    }
+}
+
+.main-in{
+    width: 60%;
+    h3{
+        font-size: 63px;
+        font-weight: 700;
+        margin-bottom: 10px;
+    }
+    .button-1{
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background-color: white;
+        padding: 7px 25px;
+        width: 200px;
+        color: black;
+    }
+    margin-bottom: 50px;
+}
+
+.articles{
+    width: 90%;
+    display: flex;
+    color: black;
+    justify-content: space-between;
+    background-color: white;
+    padding: 60px 160px;
+    gap: 60px;
+    h4{
+        font-size: 18px;
+    }
+    transform: translateX(-170px);
+}
