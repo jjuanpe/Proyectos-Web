@@ -1,0 +1,10 @@
+@use 'variables' as v;
+@mixin button(){
+    background-color : v.$color_page;
+    display: inline-block;
+    padding: 0.625rem 1.8rem;
+    color: white;
+    &:hover{
+        background-color: darken(v.$color_page,0.2);
+    }
+}

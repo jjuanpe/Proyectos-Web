@@ -1,0 +1,282 @@
+@use 'variables' as v;
+@use 'mixin' as m;
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: v.$font_normal;
+
+    background: linear-gradient(
+        to right,
+        white 0%,
+        white 59%,
+        v.$color_background 59%,
+        v.$color_background 100%
+    );
+}
+
+.container{
+    max-width: v.$main_size;
+    margin: 0 auto;
+    padding-left: clamp(0.5rem, 1vw, 1rem);
+    padding-right: clamp(0.5rem, 1vw, 1rem);
+}
+
+.menu{
+    padding-top: clamp(0.75rem, 1.3vw, 1.25rem);
+    padding-bottom: clamp(0.75rem, 1.3vw, 1.25rem);
+    display: flex;
+    align-items: center;
+    margin-bottom: clamp(1.5rem, 2.5vw, 2.5rem);
+
+    nav{
+        margin-left: clamp(2rem, 6vw, 8.125rem);
+
+        .list__menu{
+            list-style-type: none;
+            display: flex;
+            gap: clamp(1rem, 2.4vw, 2.875rem);
+
+            a{
+                text-decoration: none;
+                color: v.$color_background;
+            }
+        }
+    }
+
+    .login{
+        margin-left: auto;
+
+        ul{
+            list-style-type: none;
+            display: flex;
+            gap: clamp(0.75rem, 1.4vw, 1.688rem);
+            align-items: center;
+
+            a{
+                color: white;
+                text-decoration: none;
+            }
+
+            .second__button{
+                @include m.button;
+            }
+        }
+    }
+}
+
+main{
+    display: grid;
+    grid-template-columns: minmax(0, 60%) minmax(0, 40%);
+}
+
+.hero{
+    grid-column: 1 / span 1;
+    padding-top: clamp(1.5rem, 2.5vw, 2.5rem);
+
+    .title{
+        font-family: v.$font_title;
+        max-width: 17ch;
+        line-height: 1.05;
+        font-style: normal;
+        font-weight: 400;
+        font-size: clamp(2.25rem, 4vw, 3.5rem);
+        .highlight{
+            position: relative;
+            display: inline-block;
+            &::before{
+                content: '';
+                position: absolute;
+                background-image: url('../../img/nft-trazo.svg');
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: contain;
+
+                width: 120%;
+                height: 80%;
+                
+                left: 50%;
+                top: 50%;
+
+                transform: translate(-50%, -50%);
+
+                pointer-events: none;
+            }
+
+        }
+    }
+
+    .text__subtitle{
+        font-family: v.$font_normal;
+        color: v.$font_color_text;
+        font-style: normal;
+        font-weight: 400;
+        font-size: clamp(1rem, 1.6vw, 1.5rem);
+        line-height: clamp(2rem, 3.5vw, 3.75rem);
+    }
+
+    .hero__buttons{
+        display: flex;
+        align-items: center;
+        gap: clamp(1rem, 2vw, 2.438rem);
+
+        .button_1{
+            @include m.button;
+            text-decoration: none;
+            padding-left: clamp(1.5rem, 3vw, 3.125rem);
+            padding-right: clamp(1.5rem, 3vw, 3.125rem);
+        }
+
+        .button_2{
+            line-height: 1;
+            color: v.$color_background;
+        }
+    }
+}
+
+.featured{
+    grid-column: 1 / span 1;
+    padding-right: clamp(1rem, 2vw, 2.5rem);
+
+    .featured__title{
+        font-family: v.$font_title;
+        font-weight: 400;
+        font-style: normal;
+        font-size: clamp(1.5rem, 2vw, 2.125rem);
+        margin-bottom: clamp(0.75rem, 1vw, 1.25rem);
+    }
+
+    .featured__image{
+        display: flex;
+        justify-content: space-between;
+
+        img{
+            width: 48%;
+            border: 0.063rem solid v.$font_color_text;
+            padding: clamp(0.125rem, 0.3vw, 0.25rem);
+        }   
+    }
+}
+
+.nft{
+    grid-column: 2 / span 1;
+    grid-row: 1 / span 2;
+    padding-left: clamp(0.75rem, 1.5vw, 1.875rem);
+    margin-left: clamp(0.5rem, 1vw, 1.25rem);
+    padding-right: clamp(0.75rem, 1.5vw, 1.875rem);
+    position: relative;
+    height: 200px;
+
+    .nft__image{
+        img{
+            display: block;
+            max-width: 100%;
+        }
+    }
+
+    .nft__info{
+        background-color: white;
+        padding-left: clamp(0.4rem, 0.6vw, 0.625rem);
+        padding-right: clamp(0.4rem, 0.6vw, 0.625rem);
+        margin-top: -6rem;
+        position: relative;
+        z-index: 2;
+        height: 10rem;
+
+        .nft__owner{
+            display: flex;
+            width: 100%;
+
+            .nft__header{
+                display: flex;
+                width: 100%;
+                align-items: center;
+
+                .nft__owner__datta{
+                    display: flex;
+                    margin-left: clamp(0.3rem, 0.5vw, 0.625rem);
+                    flex-direction: column;
+                    justify-content: space-between;
+
+                    .nft__username{
+                        color:v.$font_color_text;
+                    }
+
+                    .nft__name{
+                        color: v.$color_background;
+                        font-weight: bold;
+                    }
+                }
+
+                .nft__price{
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                    margin-left: auto;
+
+                    .nft__current{
+                        color:v.$font_color_text;
+                    }
+
+                    .nft__value{
+                        color: v.$color_background;
+                        font-weight: bold;
+                    }
+                }
+            }
+        }
+
+        span{
+            display: inline-block;
+            width: 100%;
+            height: 0.188rem;
+            background-color: v.$color_page;
+            margin-top: clamp(0.75rem, 1vw, 1.25rem);
+            margin-bottom: clamp(0.75rem, 1vw, 1.25rem);
+        }
+
+        .nft__buttons{
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            gap: clamp(0.3rem, 0.5vw, 0.625rem);
+            margin-bottom: clamp(0.75rem, 1vw, 1.25rem);
+            font-weight: 600;
+
+            .button__nft1{
+                @include m.button;
+                text-decoration: none;
+                padding-left: clamp(1.5rem, 3vw, 4.375rem);
+                padding-right: clamp(1.5rem, 3vw, 4.375rem);
+            }
+
+            .button__nft2{
+                color:v.$color_page;
+                text-decoration: none;
+            }
+        }   
+    }
+
+    .nft__numbers{
+        margin-top: clamp(0.75rem, 1vw, 1.25rem);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .items{
+            color: #FFFFFF;
+            padding: clamp(0.25rem, 0.7vw, 1.25rem);
+            font-size: clamp(0.75rem, 1vw, 1.125rem);
+        }
+
+        .items span.nft__number{
+            font-weight: 600;
+            color: v.$color_page;
+            font-size: clamp(1.35rem, 2vw, 2rem);
+        }
+    }
+}
