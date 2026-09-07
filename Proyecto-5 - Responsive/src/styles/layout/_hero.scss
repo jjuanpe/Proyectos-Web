@@ -1,0 +1,140 @@
+@use "../abstract" as a;
+
+div.hero {
+  .container {
+    padding-left: 16px;
+    padding-right: 16px;
+    margin-bottom: 30px;
+    max-width: 1200px;
+    .hero__title {
+      font-size: 45px;
+      font-weight: 800;
+      color: a.$color-black;
+      margin-bottom: 20px;
+    }
+    .hero__text {
+      font-size: 16px;
+      line-height: 20px;
+      width: 380px;
+      font-weight: 500;
+      color: a.$color-gray;
+      margin-bottom: 20px;
+    }
+    .button {
+      @include a.button-degrade(a.$degrade);
+      margin-bottom: 20px;
+    }
+    .button:hover {
+      background: linear-gradient(180deg, #ff6f48, #f02aa6, #ffffff);
+    }
+    .hero-content {
+      @include a.breakpoint(tablet) {
+        width: 50%;
+      }
+
+      @include a.breakpoint(tablethorizontal) {
+        width: 40%;
+      }
+    }
+    .hero__img {
+      text-align: center;
+      position: relative;
+      @include a.breakpoint(tablet) {
+        width: 50%;
+        margin: 0;
+      }
+      @include a.breakpoint(desktop) {
+        width: 400px;
+      }
+      .hero_mobile {
+        @include a.breakpoint(tablet) {
+          display: none;
+        }
+      }
+      .number {
+        text-align: left;
+
+        span {
+          display: block;
+        }
+        div .hero_number_title {
+          font-size: 18px;
+          color: a.$color-gray;
+        }
+        div .hero_number_text {
+          color: a.$color-black;
+          font-size: 38px;
+          font-weight: 700;
+        }
+
+        .number__hero {
+          display: inline-block;
+          width: max-content;
+          color: a.$color-black;
+          border-radius: 10px;
+          padding: 5px;
+          text-align: left;
+          position: absolute;
+          background-color: white;
+          border-radius: 16px;
+          box-shadow: 0 5px 1rem a.$color-black;
+        }
+
+        .number__1 {
+          padding: 16px 45px 16px 20px;
+          bottom: 0;
+          left: 0;
+          @include a.breakpoint(tablet) {
+            bottom: 5px;
+            left: 28px;
+          }
+
+          @include a.breakpoint(tablethorizontal) {
+            bottom: -28px;
+            left: -28px;
+          }
+
+          @include a.breakpoint(desktop) {
+            bottom: -100px;
+            left: -176px;
+          }
+        }
+
+        .number__2 {
+          padding: 16px 20px 16px 20px;
+          top: 0;
+          right: 0;
+          @include a.breakpoint(tablet) {
+            top: -33px;
+          }
+
+          @include a.breakpoint(tablethorizontal) {
+            top: 74px;
+            right: 38px;
+            padding-left: 40px;
+            padding-right: 40px;
+          }
+
+          @include a.breakpoint(desktop) {
+            top: 100px;
+            right: 60px;
+          }
+        }
+      }
+    }
+
+    //Tablet
+    @include a.breakpoint(tablet) {
+      display: flex;
+      justify-content: space-between;
+      padding-bottom: 80px;
+    }
+
+    @include a.breakpoint(tablethorizontal) {
+      padding-left: 24px;
+      padding-right: 24px;
+      padding-bottom: 240px;
+      margin-bottom: 40px;
+    }
+  }
+}

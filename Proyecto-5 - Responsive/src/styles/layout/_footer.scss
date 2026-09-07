@@ -1,0 +1,24 @@
+@use "../abstract" as a;
+
+footer {
+  background: a.$color-black;
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 16px;
+    padding-right: 16px;
+    .menu__nav {
+      .list__menu {
+        list-style: none;
+        .button {
+          @include a.button(a.$color-pink);
+          background: linear-gradient(180deg, #4851ff, #f02aa6);
+        }
+        .button:hover {
+          background: linear-gradient(180deg, #4851ff, #f02aa6, #ffffff);
+        }
+      }
+    }
+  }
+}

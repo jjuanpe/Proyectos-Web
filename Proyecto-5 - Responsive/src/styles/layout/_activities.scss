@@ -1,0 +1,81 @@
+@use "../abstract" as a;
+
+div.activities {
+  .container_activities {
+    padding-left: 16px;
+    padding-right: 16px;
+    margin-bottom: 30px;
+    .activitiesheader {
+      background-image: a.$degrade;
+      color: white;
+      font-weight: 700;
+      font-size: 19px;
+      line-height: 32px;
+      padding: 10px 28px;
+      border-radius: 10px;
+
+      @include a.breakpoint(tablethorizontal) {
+        width: 350px;
+        height: 322px;
+        padding: 15px;
+      }
+    }
+    .activities-item {
+      padding: 20px;
+      margin-top: 20px;
+      margin-bottom: 20px;
+
+      @include a.breakpoint(tablet) {
+        margin-bottom: 0;
+      }
+
+      .icon-image {
+        background: a.$degrade;
+        width: 56px;
+        height: 56px;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .item-title {
+        font-weight: 800;
+        font-size: 20px;
+        line-height: 100%;
+        color: a.$color-black;
+      }
+
+      .item-text {
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 26px;
+        color: a.$color-gray;
+      }
+
+      .activities-link {
+        .link {
+          text-decoration: none;
+          color: a.$color-pink;
+          font-size: 18px;
+          font-weight: 700;
+          line-height: 28px;
+        }
+      }
+    }
+    //Tablet
+    @include a.breakpoint(tablet) {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+
+    @include a.breakpoint(tablethorizontal) {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      margin-right: auto;
+      margin-left: auto;
+    }
+  }
+}

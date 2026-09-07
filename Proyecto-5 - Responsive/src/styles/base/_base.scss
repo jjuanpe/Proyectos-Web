@@ -1,0 +1,27 @@
+@use "../abstract" as a;
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  @include a.breakpoint(tablet) {
+    background-image: url("../../assets/image__header.png");
+    background-repeat: no-repeat;
+    background-position: 116% 0%;
+    background-size: 520px;
+  }
+
+  @include a.breakpoint(tablethorizontal) {
+    background-position: 101% 0%;
+    background-size: 450px;
+  }
+
+  @include a.breakpoint(desktop) {
+    background-size: 550px;
+  }
+}
+
+img {
+  max-width: 100%;
+}
