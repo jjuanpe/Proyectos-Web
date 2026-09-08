@@ -1,0 +1,59 @@
+@use "../abstracts" as e;
+
+div.hero {
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    @include e.container-setting();
+    padding-top: 0;
+
+    .title {
+      color: e.$color-black;
+      line-height: 36px;
+      font-size: 28px;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    .text {
+      text-align: center;
+      font-size: 14px;
+      line-height: 22px;
+      font-style: normal;
+      color: e.$color-text;
+    }
+
+    .buttons {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 5px;
+      .button-1 {
+        text-decoration: none;
+        padding: 15px 80px;
+        background-color: e.$color-black;
+        color: white;
+        border-radius: 20px;
+      }
+
+      .button-2 {
+        text-decoration: none;
+        color: e.$color-black;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: max-content;
+        margin-inline: auto;
+        gap: 12px;
+
+        img {
+          padding: 0;
+          margin: 0;
+          display: block;
+        }
+      }
+    }
+  }
+}

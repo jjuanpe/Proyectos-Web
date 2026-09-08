@@ -1,0 +1,57 @@
+@use "../abstracts" as e;
+
+header.menu {
+  .container {
+    display: flex;
+    align-items: center;
+    @include e.container-setting();
+    margin-bottom: 0;
+    .header_toggle {
+      appearance: none;
+      display: none;
+    }
+
+    .header_hamburger {
+      order: 1;
+      margin: 0;
+      padding: 0;
+    }
+
+    .header_toggle:checked ~ .menu__nav {
+      display: block;
+    }
+
+    .menu__nav {
+      display: none;
+      position: absolute;
+      top: 100%;
+      right: 0;
+      left: auto;
+      width: max-content;
+      border: 1px solid black;
+      .list_menu {
+        @include e.reset-list();
+        display: flex;
+        flex-direction: column;
+        li a {
+          text-decoration: none;
+          display: inline-block;
+          padding: 15px;
+          color: e.$color-black;
+        }
+      }
+    }
+    .login {
+      margin-left: auto;
+      .list_login {
+        @include e.reset-list();
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        .last-childs {
+          display: none;
+        }
+      }
+    }
+  }
+}

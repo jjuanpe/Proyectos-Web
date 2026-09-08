@@ -1,0 +1,18 @@
+@use "../abstracts" as a;
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  min-height: 100vh;
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+  background: linear-gradient(
+    to bottom,
+    a.$color-background 0%,
+    a.$color-background 50%,
+    a.$color-cyan 50%,
+    a.$color-cyan 100%
+  );
+  background-repeat: no-repeat;
+}
