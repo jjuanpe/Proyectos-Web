@@ -1,0 +1,75 @@
+@use "../abstracts" as e;
+
+div.activities {
+  background-color: e.$color-cyan;
+  margin: 0;
+  padding-top: 20px;
+
+  .container {
+    @include e.container-setting();
+    margin-bottom: 0;
+    background-color: white;
+    max-width: 100%;
+    max-height: 100%;
+
+    .articles {
+      @include e.container-setting();
+      background-color: e.$color-background;
+      border-radius: 10px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      .items {
+        margin-bottom: 20px;
+        text-align: center;
+
+        .title {
+          font-size: 36px;
+          line-height: auto;
+          color: e.$color-black;
+          font-weight: 600;
+        }
+
+        .text {
+          font-size: 14px;
+          font-weight: 200;
+          line-height: 20px;
+          color: e.$color-text;
+        }
+      }
+
+      @include e.breakpoint(tablet) {
+        flex-direction: row;
+        justify-content: space-between;
+      }
+
+      @include e.breakpoint(desktop) {
+        top: -160px;
+        left: 10px;
+        max-width: 420px;
+      }
+    }
+
+    @include e.breakpoint(tablethorizontal) {
+      margin-top: 0;
+      padding-top: 0;
+      background-color: e.$color-white-background;
+    }
+
+    @include e.breakpoint(desktop) {
+      background-color: white;
+      max-width: 100%;
+      max-height: 100%;
+    }
+  }
+
+  @include e.breakpoint(tablethorizontal) {
+    margin-top: 0;
+    padding-top: 0;
+    background-color: e.$color-white-background;
+    position: relative;
+    z-index: 0;
+  }
+}

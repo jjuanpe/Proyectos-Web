@@ -1,0 +1,103 @@
+@use "../abstracts" as e;
+
+div.asides {
+  .container {
+    @include e.container-setting();
+    margin-bottom: 0;
+    .aside-image {
+      img {
+        width: 100%;
+        height: auto;
+        margin: 0;
+        padding: 0;
+        margin-bottom: 10px;
+
+        @include e.breakpoint(tablethorizontal) {
+          width: 610px;
+          max-width: none;
+          transform: translate(-120px, 100px);
+        }
+
+        @include e.breakpoint(desktop) {
+          transform: translate(-90px, 280px) scale(1.38);
+        }
+      }
+      @include e.breakpoint(desktop) {
+        position: relative;
+        z-index: 2;
+      }
+    }
+    .comments {
+      @include e.container-setting();
+
+      .items {
+        @include e.container-setting();
+        border-radius: 10px;
+        background-color: e.$color-white-background;
+
+        .text {
+          line-height: 24px;
+          font-size: 16px;
+          color: #070d15;
+        }
+
+        .author {
+          color: e.$color-black;
+          font-weight: bold;
+          font-size: 18px;
+          line-height: auto;
+        }
+
+        @include e.breakpoint(tablethorizontal) {
+          background-color: rgb(255 255 255 / 40%);
+          width: 300px;
+        }
+
+        @include e.breakpoint(desktop) {
+          z-index: 10;
+        }
+      }
+
+      .item-1 {
+        @include e.breakpoint(tablethorizontal) {
+          position: absolute;
+          top: 130px;
+          right: 10px;
+        }
+
+        @include e.breakpoint(desktop) {
+          top: 309px;
+          right: 5px;
+        }
+      }
+
+      .item-2 {
+        @include e.breakpoint(tablethorizontal) {
+          position: absolute;
+          bottom: 130px;
+          right: 10px;
+        }
+
+        @include e.breakpoint(desktop) {
+          left: 150px;
+          bottom: -30px;
+        }
+      }
+
+      @include e.breakpoint(tablet) {
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 20px;
+      }
+
+      @include e.breakpoint(tablethorizontal) {
+        position: static;
+      }
+    }
+    @include e.breakpoint(desktop) {
+      overflow: visible;
+    }
+  }
+}

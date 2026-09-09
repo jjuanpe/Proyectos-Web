@@ -6,7 +6,8 @@ div.hero {
     flex-direction: column;
     justify-content: center;
     @include e.container-setting();
-    padding-top: 0;
+    padding: 0;
+    margin-bottom: 0;
 
     .title {
       color: e.$color-black;
@@ -14,6 +15,19 @@ div.hero {
       font-size: 28px;
       font-weight: bold;
       text-align: center;
+      margin-bottom: 0;
+
+      @include e.breakpoint(tablet) {
+        font-size: 40px;
+        line-height: 48px;
+      }
+
+      @include e.breakpoint(desktop) {
+        width: 100%;
+        font-size: 42px;
+        line-height: 48px;
+        font-weight: 900;
+      }
     }
 
     .text {
@@ -22,6 +36,16 @@ div.hero {
       line-height: 22px;
       font-style: normal;
       color: e.$color-text;
+
+      @include e.breakpoint(tablet) {
+        font-size: 20px;
+        line-height: 24px;
+      }
+
+      @include e.breakpoint(desktop) {
+        font-size: 22px;
+        line-height: 28px;
+      }
     }
 
     .buttons {
@@ -30,12 +54,19 @@ div.hero {
       justify-content: center;
       align-items: center;
       gap: 5px;
+
       .button-1 {
         text-decoration: none;
         padding: 15px 80px;
         background-color: e.$color-black;
         color: white;
         border-radius: 20px;
+
+        @include e.breakpoint(tablet) {
+          margin-left: auto;
+          margin-right: 10px;
+          padding: 15px 40px;
+        }
       }
 
       .button-2 {
@@ -48,11 +79,39 @@ div.hero {
         margin-inline: auto;
         gap: 12px;
 
-        img {
-          padding: 0;
-          margin: 0;
-          display: block;
+        .button-image {
+          width: 48px;
+          height: 48px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          border-radius: 50%;
+          background-color: white;
+          box-shadow: 0 0 9px black;
         }
+
+        img {
+          display: block;
+          width: 14px;
+          height: 14px;
+        }
+
+        .button-text {
+          display: block;
+          margin: 0;
+          padding: 0;
+          line-height: 1;
+        }
+
+        @include e.breakpoint(tablet) {
+          margin-left: 10px;
+          margin-right: auto;
+        }
+      }
+
+      @include e.breakpoint(tablet) {
+        flex-direction: row;
       }
     }
   }

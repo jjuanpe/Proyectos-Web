@@ -3,16 +3,18 @@
 body {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
   min-height: 100vh;
   font-family: "Poppins", sans-serif;
   font-style: normal;
-  background: linear-gradient(
-    to bottom,
-    a.$color-background 0%,
-    a.$color-background 50%,
-    a.$color-cyan 50%,
-    a.$color-cyan 100%
-  );
-  background-repeat: no-repeat;
+  background-color: a.$color-white-background;
+  @include a.breakpoint(tablethorizontal) {
+    background: linear-gradient(to right, #efefef 65%, #a9d6cb 65%);
+  }
+}
+
+.principal-container {
+  @include a.breakpoint(tablethorizontal) {
+    display: flex;
+    gap: 60px;
+  }
 }
